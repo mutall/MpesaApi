@@ -10,13 +10,18 @@ define("ACCOUNT_BALANCE_URL", "https://sandbox.safaricom.co.ke/mpesa/accountbala
 define("TRANSACTION_QUERY_URL", "https://sandbox.safaricom.co.ke/mpesa/transactionstatus/v1/query");
 define("REVERSAL_URL", "https://sandbox.safaricom.co.ke/mpesa/reversal/v1/request");
 
-
+//url for posting results for the various apis
 define("B2B_RESULT_URL", "http://mutall.co.ke/MpesaApi/b2b_result.php");
 define("B2C_RESULT_URL", "http://mutall.co.ke/MpesaApi/b2c_result.php");
 define("TRANSACTION_STATUS_RESULT_URL", "http://mutall.co.ke/MpesaApi/transaction_status_result.php");
 define("ACCOUNT_BALANCE_RESULT_URL", "http://mutall.co.ke/MpesaApi/account_balance_result.php");
 
+//url for posting a timeout error
 define("TIMEOUT_URL", "http://mutall.co.ke/MpesaApi/timeout.php");
+
+//THese two urls are used for the c2b api 
+define("CONFIRMATION_URL", "http://mutall.co.ke/MpesaApi/confirmation_url.php");
+define("VALIDATION_URL", "http://mutall.co.ke/MpesaApi/validation_url.php");
 
 // credentials
 define("CONSUMER_KEY", "2IbOcf11rCnUQmOH5IEjJFNNYZZrUI7Q");
