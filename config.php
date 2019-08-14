@@ -11,26 +11,26 @@ define("TRANSACTION_QUERY_URL", "https://sandbox.safaricom.co.ke/mpesa/transacti
 define("REVERSAL_URL", "https://sandbox.safaricom.co.ke/mpesa/reversal/v1/request");
 
 //url for posting results for the various apis
-define("B2B_RESULT_URL", "http://mutall.co.ke/MpesaApi/b2b_result.php");
-define("B2C_RESULT_URL", "http://mutall.co.ke/MpesaApi/b2c_result.php");
-define("TRANSACTION_STATUS_RESULT_URL", "http://mutall.co.ke/MpesaApi/transaction_status_result.php");
-define("ACCOUNT_BALANCE_RESULT_URL", "http://mutall.co.ke/MpesaApi/account_balance_result.php");
+define("B2B_RESULT_URL", "http://mutall.co.ke/DarajaApi/b2b_result.php");
+define("B2C_RESULT_URL", "http://mutall.co.ke/DarajaApi/b2c_result.php");
+define("TRANSACTION_STATUS_RESULT_URL", "http://mutall.co.ke/DarajaApi/transaction_status_result.php");
+define("ACCOUNT_BALANCE_RESULT_URL", "http://mutall.co.ke/DarajaApi/account_balance_result.php");
 
 //url for posting a timeout error
-define("TIMEOUT_URL", "http://mutall.co.ke/MpesaApi/timeout.php");
+define("TIMEOUT_URL", "http://mutall.co.ke/DarajaApi/timeout.php");
 
 //THese two urls are used for the c2b api 
-define("CONFIRMATION_URL", "http://mutall.co.ke/MpesaApi/confirmation_url.php");
-define("VALIDATION_URL", "http://mutall.co.ke/MpesaApi/validation_url.php");
+define("CONFIRMATION_URL", "http://mutall.co.ke/DarajaApi/confirmation_url.php");
+define("VALIDATION_URL", "http://mutall.co.ke/DarajaApi/validation_url.php");
 
-// credentials
+// credentials supplied by the developer account
 define("CONSUMER_KEY", "2IbOcf11rCnUQmOH5IEjJFNNYZZrUI7Q");
 define("CONSUMER_SECRET", "j9AgYBsCaCQHAmHr");
 
 // Test credentials 
 // please note that the test credentials expire after 3days 
 
-// The username of the M-Pesa B2C account API operator
+// The username of the M-Pesa initiator. We will be using test credentials since our application is in the sandbox stage
 define("INITIATOR_NAME", "apitest511");
 
 /**
