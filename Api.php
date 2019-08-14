@@ -18,7 +18,7 @@ class B2C extends Mpesa
     public function __construct()
     {
         parent::__construct();
-        $this->result = $this->execute(TRANSACTION_QUERY_URL);
+        $this->result = $this->execute(B2C_URL);
     }
 
     protected function generateBody()
@@ -32,7 +32,7 @@ class B2C extends Mpesa
             'PartyB' => MSISDN,
             'Remarks' => 'Payment for april',
             'QueueTimeOutURL' => TIMEOUT_URL,
-            'ResultURL' => RESULT_URL
+            'ResultURL' => B2C_RESULT_URL
         );
     }
 }
@@ -65,7 +65,7 @@ class B2B extends Mpesa
             // 'AccountReference' => ' ', //Account Reference mandatory for “BusinessPaybill” CommandID.
             'Remarks' => 'Payment for job done on december', //Comments that are sent along with the transaction.
             'QueueTimeOutURL' => TIMEOUT_URL,
-            'ResultURL' => RESULT_URL
+            'ResultURL' => B2B_RESULT_URL
         );
     }
 }
@@ -79,7 +79,7 @@ class TranactionStatus extends Mpesa
     public function __construct()
     {
         parent::__construct();
-        $this->result = $this->execute(B2C_URL);
+        $this->result = $this->execute(TRANSACTION_QUERY_URL);
     }
 
     protected function generateBody()
@@ -88,13 +88,13 @@ class TranactionStatus extends Mpesa
             'Initiator' => INITIATOR_NAME,
             'SecurityCredential' => SECURITY_CREDENTIAL,
             'CommandID' => 'TransactionStatusQuery',
-            'TransactionID' => ' ', //organization receiving the funds
+            'TransactionID' => '4', //organization receiving the funds
             'PartyA' => PARTYA,
             'IdentifierType' => '1',
-            'ResultURL' => RESULT_URL,
+            'ResultURL' => TRANSACTION_STATUS_RESULT_URL,
             'QueueTimeOutURL' => TIMEOUT_URL,
-            'Remarks' => ' ', //comments sent along with the transaction
-            'Occasion' => ' ' //optional
+            'Remarks' => 'Transaction for the month August', //comments sent along with the transaction
+            // 'Occasion' => ' ' //optional
         );
     }
 }
@@ -116,15 +116,14 @@ class AccountBalance extends Mpesa
     protected function generateBody()
     {
         return array(
-            'CommandID' => ' ',
             'Initiator' => INITIATOR_NAME,
             'SecurityCredential' => SECURITY_CREDENTIAL,
             'CommandID' => 'AccountBalance',
             'PartyA' => PARTYA,
             'IdentifierType' => '4',
-            'Remarks' => ' ',
+            'Remarks' => 'Account balance as at July',
             'QueueTimeOutURL' => TIMEOUT_URL,
-            'ResultURL' => RESULT_URL
+            'ResultURL' => ACCOUNT_BALANCE_RESULT_URL
         );
     }
 }
@@ -149,8 +148,8 @@ class C2Bregister extends Mpesa
         return array(
             'ShortCode' => PARTYA,
             'ResponseType' => ' ',
-            'ConfirmationURL' => 'http://ip_address:port/confirmation',
-            'ValidationURL' => 'http://ip_address:port/validation_url'
+            'ConfirmationURL' => CONFIRMATION_URL,
+            'ValidationURL' => VALIDATION_URL
         );
     }
 }
@@ -177,5 +176,5 @@ class C2Bsimulate extends Mpesa
 }
 
 
-$x = new B2B();
-var_dump($x->result);
+new AccountBalance();
+// var_dump($x->result);
