@@ -147,7 +147,7 @@ class C2Bregister extends Mpesa
     {
         return array(
             'ShortCode' => PARTYA,
-            'ResponseType' => ' ',
+            'ResponseType' => 'Confirmed',
             'ConfirmationURL' => CONFIRMATION_URL,
             'ValidationURL' => VALIDATION_URL
         );
@@ -166,15 +166,11 @@ class C2Bsimulate extends Mpesa
     {
         return array(
             //Fill in the request parameters with valid values
-            'ShortCode' => ' ',
+            'ShortCode' => PARTYA,
             'CommandID' => 'CustomerPayBillOnline',
-            'Amount' => ' ',
-            'Msisdn' => ' ',
+            'Amount' => '40000',
+            'Msisdn' => MSISDN,
             'BillRefNumber' => '00000'
         );
     }
 }
-
-
-new AccountBalance();
-// var_dump($x->result);
